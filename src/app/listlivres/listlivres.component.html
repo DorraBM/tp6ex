@@ -1,0 +1,25 @@
+<h1>Liste des livres</h1>
+Recherche: <input type="radio" checked (click)="Tous()" (load)="Tous()" name="radio">Tous
+<input type="radio" (click)="Romans()"name="radio">Romans
+<input type="radio" (click)="Historique()"name="radio">Historique
+
+<div>
+    <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Id</th>
+            <th>Titre</th>
+            <th>Infos</th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let p of listtab">
+              <td>{{p.id}}</td>
+              <td>{{p.titre}}</td>
+              <td><button class="btn btn bg-primary"[routerLink]="['/listlivres',p.id]" >Infos</button></td>
+            </tr>
+        
+        </tbody>
+      </table>
+    
+</div>

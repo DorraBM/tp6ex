@@ -1,0 +1,17 @@
+<div class="card text-center" style="width:20rem ;margin-left:20px;margin-top:20px">
+    <div class="card-header"> <strong>{{livre.titre}}</strong> </div>
+    <div class="card-body">
+        Auteur: {{livre.auteur|titlecase}}<div class="row">
+            
+        </div>
+        Categorie:{{livre.categorie| uppercase}}
+        <br>
+        <div [ngClass]="{
+            'badge':true,
+            'bg-primary text-white':livre.nouveau,
+            'bg-warning text-white':!livre.nouveau
+
+        }">Prix:{{livre.prix|number:'2.3'}}DT</div>
+    </div>
+    <div class="card-footer"><button (click)="onRetour()"class="btn bg-dark text-white" >Retour</button></div>
+  </div>
